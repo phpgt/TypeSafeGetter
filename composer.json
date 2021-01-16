@@ -1,0 +1,27 @@
+{
+	"name": "phpgt/typesafegetter",
+	"description": " An interface for objects that expose type-safe getter methods.",
+	"type": "library",
+	"license": "MIT",
+
+	"require": {
+		"php": ">=8.0"
+	},
+
+	"require-dev": {
+		"phpstan/phpstan": ">=0.12.42"
+	},
+
+	"autoload": {
+		"psr-4": {
+			"Gt\\TypeSafeGetter\\": "./src"
+		}
+	},
+
+	"authors": [
+		{
+			"name": "Greg Bowler",
+			"email": "greg.bowler@g105b.com"
+		}
+	]
+}
