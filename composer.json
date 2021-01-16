@@ -1,6 +1,6 @@
 {
 	"name": "phpgt/typesafegetter",
-	"description": " An interface for objects that expose type-safe getter methods.",
+	"description": "An interface for objects that expose type-safe getter methods.",
 	"type": "library",
 	"license": "MIT",
 

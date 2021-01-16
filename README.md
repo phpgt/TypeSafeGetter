@@ -1,0 +1,20 @@
+An interface for objects that expose type-safe getter methods.
+==============================================================
+
+Throughout PHP.Gt repositories, wherever an object represents enclosed data, a consistent interface is used to expose the data in a type-safe manner.
+
+The following methods are defined by this interface:
+
++ `get(string $name):mixed` - A non-type-safe getter, used for getting keys that are not of an inbuilt type
++ `getString(string $name):string`
++ `getInt(string $name):int`
++ `getFloat(string $name):float`
++ `getBool(string $name):bool`
++ `getDateTime(string $name):DateTimeInterface`
+
+Common areas you will see this interface used:
+
++ Database rows
++ User input (from the query string or posted form data)
++ Session and cookie storage
++ [DataObject](https://github.com/PhpGt/DataObject)
