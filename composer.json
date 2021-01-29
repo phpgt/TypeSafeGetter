@@ -12,16 +12,23 @@
 		"phpstan/phpstan": ">=0.12.42"
 	},
 
-	"autoload": {
-		"psr-4": {
-			"Gt\\TypeSafeGetter\\": "./src"
-		}
-	},
-
 	"authors": [
 		{
 			"name": "Greg Bowler",
 			"email": "greg.bowler@g105b.com"
 		}
-	]
+	],
+
+	"funding": [
+		{
+			"type": "github",
+			"url": "https://github.com/sponsors/PhpGt"
+		}
+	],
+
+	"autoload": {
+		"psr-4": {
+			"Gt\\TypeSafeGetter\\": "./src"
+		}
+	}
 }
