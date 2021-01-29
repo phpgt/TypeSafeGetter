@@ -6,11 +6,11 @@ Throughout PHP.Gt repositories, wherever an object represents enclosed data, a c
 The following methods are defined by this interface:
 
 + `get(string $name):mixed` - A non-type-safe getter, used for getting keys that are not of an inbuilt type
-+ `getString(string $name):string`
-+ `getInt(string $name):int`
-+ `getFloat(string $name):float`
-+ `getBool(string $name):bool`
-+ `getDateTime(string $name):DateTimeInterface`
++ `getString(string $name):?string`
++ `getInt(string $name):?int`
++ `getFloat(string $name):?float`
++ `getBool(string $name):?bool`
++ `getDateTime(string $name):?DateTimeInterface`
 
 Common areas you will see this interface used:
 
