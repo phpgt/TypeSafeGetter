@@ -9,5 +9,5 @@ interface TypeSafeGetter {
 	public function getInt(string $name):?int;
 	public function getFloat(string $name):?float;
 	public function getBool(string $name):?bool;
-	public function getDateTime(string $name):DateTimeInterface;
+	public function getDateTime(string $name):?DateTimeInterface;
 }
