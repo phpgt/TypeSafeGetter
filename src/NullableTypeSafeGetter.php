@@ -32,7 +32,7 @@ trait NullableTypeSafeGetter {
 		);
 	}
 
-	protected function getNullableType(string $name, string $type):mixed {
+	protected function getNullableType(string $name, string|callable $type):mixed {
 		$value = $this->get($name);
 		if(is_null($value)) {
 			return null;
