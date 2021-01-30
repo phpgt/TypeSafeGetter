@@ -1,6 +1,9 @@
 <?php
 namespace Gt\TypeSafeGetter;
 
+use DateTimeImmutable;
+use DateTimeInterface;
+
 /** @method mixed get(string $name) */
 trait NullableTypeSafeGetter {
 	public function getString(string $name):?string {
@@ -14,6 +17,19 @@ trait NullableTypeSafeGetter {
 	}
 	public function getBool(string $name):?bool {
 		return $this->getNullableType($name, "bool");
+	}
+	public function getDateTime(string $name):?DateTimeInterface {
+		return $this->getNullableType(
+			$name,
+			function(string|int $value) {
+				if(is_numeric($value)) {
+					$dt = new DateTimeImmutable();
+					return $dt->setTimestamp($value);
+				}
+
+				return new DateTimeImmutable($value);
+			}
+		);
 	}
 
 	protected function getNullableType(string $name, string $type):mixed {
