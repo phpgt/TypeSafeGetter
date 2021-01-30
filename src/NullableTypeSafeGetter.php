@@ -52,12 +52,12 @@ trait NullableTypeSafeGetter {
 			return (bool)$value;
 		}
 
-		$ucType = ucfirst($type);
-
 		if(is_callable($type)) {
 			return call_user_func($type, $value);
 		}
-		elseif(class_exists($type)) {
+
+		$ucType = ucfirst($type);
+		if(class_exists($type)) {
 			return new $type($value);
 		}
 		elseif(method_exists($this, "get$ucType")) {
