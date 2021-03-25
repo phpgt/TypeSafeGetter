@@ -3,14 +3,32 @@ An interface for objects that expose type-safe getter methods.
 
 Throughout PHP.Gt repositories, wherever an object represents enclosed data, a consistent interface is used to expose the data in a type-safe manner.
 
+***
+
+<a href="https://github.com/PhpGt/TypeSafeGetter/actions" target="_blank">
+	<img src="https://badge.status.php.gt/typesafegetter-build.svg" alt="Build status" />
+</a>
+<a href="https://scrutinizer-ci.com/g/PhpGt/TypeSafeGetter" target="_blank">
+	<img src="https://badge.status.php.gt/typesafegetter-quality.svg" alt="Code quality" />
+</a>
+<a href="https://scrutinizer-ci.com/g/PhpGt/TypeSafeGetter" target="_blank">
+	<img src="https://badge.status.php.gt/typesafegetter-coverage.svg" alt="Code coverage" />
+</a>
+<a href="https://packagist.org/packages/PhpGt/TypeSafeGetter" target="_blank">
+	<img src="https://badge.status.php.gt/typesafegetter-version.svg" alt="Current version" />
+</a>
+<a href="http://www.php.gt/typesafegetter" target="_blank">
+	<img src="https://badge.status.php.gt/typesafegetter-docs.svg" alt="PHP.Gt/TypeSafeGetter documentation" />
+</a>
+
 The following methods are defined by this interface:
 
 + `get(string $name):mixed` - A non-type-safe getter, used for getting keys that are not of an inbuilt type
-+ `getString(string $name):string`
-+ `getInt(string $name):int`
-+ `getFloat(string $name):float`
-+ `getBool(string $name):bool`
-+ `getDateTime(string $name):DateTimeInterface`
++ `getString(string $name):?string`
++ `getInt(string $name):?int`
++ `getFloat(string $name):?float`
++ `getBool(string $name):?bool`
++ `getDateTime(string $name):?DateTimeInterface`
 
 Common areas you will see this interface used:
 
