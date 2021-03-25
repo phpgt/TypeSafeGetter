@@ -11,9 +11,6 @@ Throughout PHP.Gt repositories, wherever an object represents enclosed data, a c
 <a href="https://scrutinizer-ci.com/g/PhpGt/TypeSafeGetter" target="_blank">
 	<img src="https://badge.status.php.gt/typesafegetter-quality.svg" alt="Code quality" />
 </a>
-<a href="https://scrutinizer-ci.com/g/PhpGt/TypeSafeGetter" target="_blank">
-	<img src="https://badge.status.php.gt/typesafegetter-coverage.svg" alt="Code coverage" />
-</a>
 <a href="https://packagist.org/packages/PhpGt/TypeSafeGetter" target="_blank">
 	<img src="https://badge.status.php.gt/typesafegetter-version.svg" alt="Current version" />
 </a>
