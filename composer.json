@@ -9,7 +9,8 @@
 	},
 
 	"require-dev": {
-		"phpstan/phpstan": "v1.8.0"
+		"phpstan/phpstan": "v1.8.0",
+		"phpunit/phpunit": "v9.5.21"
 	},
 
 	"authors": [
@@ -29,6 +30,11 @@
 	"autoload": {
 		"psr-4": {
 			"Gt\\TypeSafeGetter\\": "./src"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Gt\\TypeSafeGetter\\Test\\": "./test/phpunit"
 		}
 	}
 }

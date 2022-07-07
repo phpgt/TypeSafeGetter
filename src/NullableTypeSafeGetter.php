@@ -21,12 +21,15 @@ trait NullableTypeSafeGetter {
 	public function getDateTime(string $name):?DateTimeInterface {
 		return $this->getNullableType(
 			$name,
-			function(string|int $value) {
+			function(string|int|DateTimeInterface $value) {
+				if($value instanceof DateTimeInterface) {
+					return $value;
+				}
+
 				if(is_numeric($value)) {
 					$dt = new DateTimeImmutable();
 					return $dt->setTimestamp($value);
 				}
-
 				return new DateTimeImmutable($value);
 			}
 		);
