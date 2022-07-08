@@ -35,16 +35,6 @@ trait NullableTypeSafeGetter {
 		);
 	}
 
-	/**
-	 * @template T
-	 * @param class-string<T> $className
-	 * @param string $name
-	 * @return T
-	 */
-	public function getClass(string $className, string $name):?object {
-		return new $className;
-	}
-
 	protected function getNullableType(string $name, string|callable $type):mixed {
 		$value = $this->get($name);
 		if(is_null($value)) {
@@ -68,8 +58,6 @@ trait NullableTypeSafeGetter {
 		if(is_callable($type)) {
 			return call_user_func($type, $value);
 		}
-
-
 
 		return null;
 	}
