@@ -1,9 +1,10 @@
 <?php
 namespace Gt\TypeSafeGetter\Test;
 
+use Gt\TypeSafeGetter\TypeSafeGetter;
 use Gt\TypeSafeGetter\NullableTypeSafeGetter;
 
-class Example {
+class TestGetter implements TypeSafeGetter {
 	use NullableTypeSafeGetter;
 
 	public function __construct(private array $kvp = []) {}
