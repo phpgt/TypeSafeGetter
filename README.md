@@ -26,13 +26,14 @@ The following methods are defined by this interface:
 + `getFloat(string $name):?float`
 + `getBool(string $name):?bool`
 + `getDateTime(string $name):?DateTimeInterface`
++ `getObject(string $name, class-string<T> $className):?T`
 
 Common areas you will see this interface used:
 
 + Database rows
 + User input (from the query string or posted form data)
 + Session and cookie storage
-+ [DataObject](https://github.com/PhpGt/DataObject)
++ PHP.Gt's [DataObject](https://www.php.gt/dataobject) repository.
 
 `NullableTypeSafeGetter` trait
 ------------------------------
