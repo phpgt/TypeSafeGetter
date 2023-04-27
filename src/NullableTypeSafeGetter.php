@@ -3,21 +3,26 @@ namespace Gt\TypeSafeGetter;
 
 use DateTimeImmutable;
 use DateTimeInterface;
+use TypeError;
 
 /** @method mixed get(string $name) */
 trait NullableTypeSafeGetter {
 	public function getString(string $name):?string {
 		return $this->getNullableType($name, "string");
 	}
+
 	public function getInt(string $name):?int {
 		return $this->getNullableType($name, "int");
 	}
+
 	public function getFloat(string $name):?float {
 		return $this->getNullableType($name, "float");
 	}
+
 	public function getBool(string $name):?bool {
 		return $this->getNullableType($name, "bool");
 	}
+
 	public function getDateTime(string $name):?DateTimeInterface {
 		return $this->getNullableType(
 			$name,
@@ -35,7 +40,17 @@ trait NullableTypeSafeGetter {
 		);
 	}
 
-	protected function getNullableType(string $name, string|callable $type):mixed {
+	public function getObject(string $name, string $className) {
+		return $this->getNullableType(
+			$name,
+			$className,
+		);
+	}
+
+	protected function getNullableType(
+		string $name,
+		string|callable $type,
+	):mixed {
 		$value = $this->get($name);
 		if(is_null($value)) {
 			return null;
@@ -57,6 +72,14 @@ trait NullableTypeSafeGetter {
 
 		if(is_callable($type)) {
 			return call_user_func($type, $value);
+		}
+
+		if(class_exists($type) || interface_exists($type)) {
+			$actualType = get_class($value);
+			if($actualType !== $type && !is_a($actualType, $type, true)) {
+				throw new TypeError("Session value must be of type $type, $actualType returned");
+			}
+			return $value;
 		}
 
 		return null;

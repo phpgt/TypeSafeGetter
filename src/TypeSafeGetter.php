@@ -10,4 +10,12 @@ interface TypeSafeGetter {
 	public function getFloat(string $name):?float;
 	public function getBool(string $name):?bool;
 	public function getDateTime(string $name):?DateTimeInterface;
+
+	/**
+	 * @template T of object
+	 * @param string $name
+	 * @param class-string<T> $className
+	 * @return T
+	 */
+	public function getObject(string $name, string $className);
 }
