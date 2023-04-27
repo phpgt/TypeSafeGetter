@@ -2,7 +2,9 @@
 namespace Gt\TypeSafeGetter\Test;
 
 use DateTime;
+use DateTimeInterface;
 use PHPUnit\Framework\TestCase;
+use TypeError;
 
 class TypeSafeGetterTest extends TestCase {
 	public function testGetString():void {
@@ -110,5 +112,48 @@ class TypeSafeGetterTest extends TestCase {
 		]);
 		$dateTime = $sut->getDateTime("test");
 		self::assertSame($dateString, $dateTime->format("Y-m-d"));
+	}
+
+	public function testGetObject():void {
+		$example = new ExampleClass("Just an example");
+		$sut = new TestGetter([
+			"example" => $example
+		]);
+		$object = $sut->getObject("example", ExampleClass::class);
+		self::assertSame(
+			$example,
+			$object
+		);
+
+// This next assertion is pointless because we've just checked that both
+// variables reference the same object... but this shows that the IDE
+// can see what type of object it is.
+		self::assertSame(
+			"Just an example",
+			$object->name
+		);
+	}
+
+	public function testGetObject_invalidType():void {
+		$example = new ExampleClass("Just an example");
+		$sut = new TestGetter([
+			"example" => $example
+		]);
+
+		self::expectException(TypeError::class);
+		self::expectExceptionMessage("Session value must be of type DateTimeInterface, " . ExampleClass::class . " returned");
+		$sut->getObject("example", DateTimeInterface::class);
+	}
+
+	public function testGetObject_inheritedClass():void {
+		$example = new DateTime("1988-04-05");
+		$sut = new TestGetter([
+			"example" => $example
+		]);
+
+		self::assertSame(
+			$example,
+			$sut->getObject("example", DateTimeInterface::class),
+		);
 	}
 }
