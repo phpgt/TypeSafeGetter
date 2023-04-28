@@ -40,7 +40,7 @@ trait NullableTypeSafeGetter {
 		);
 	}
 
-	public function getObject(string $name, string $className) {
+	public function getInstance(string $name, string $className) {
 		return $this->getNullableType(
 			$name,
 			$className,
@@ -52,6 +52,7 @@ trait NullableTypeSafeGetter {
 		string|callable $type,
 	):mixed {
 		$value = $this->get($name);
+
 		if(is_null($value)) {
 			return null;
 		}
@@ -75,13 +76,20 @@ trait NullableTypeSafeGetter {
 		}
 
 		if(class_exists($type) || interface_exists($type)) {
-			$actualType = get_class($value);
-			if($actualType !== $type && !is_a($actualType, $type, true)) {
-				throw new TypeError("Session value must be of type $type, $actualType returned");
-			}
+			$this->checkType($value, $type);
 			return $value;
 		}
 
 		return null;
+	}
+
+	protected function checkType(mixed $value, string $type):void {
+		$actualType = get_class($value);
+		if($actualType !== $type && !is_a($actualType, $type, true)) {
+			throw new TypeError(
+				"Session value must be of type $type, "
+				. "$actualType returned"
+			);
+		}
 	}
 }

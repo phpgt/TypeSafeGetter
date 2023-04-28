@@ -11,10 +11,13 @@ Throughout PHP.Gt repositories, wherever an object represents enclosed data, a c
 <a href="https://scrutinizer-ci.com/g/PhpGt/TypeSafeGetter" target="_blank">
 	<img src="https://badge.status.php.gt/typesafegetter-quality.svg" alt="Code quality" />
 </a>
+<a href="https://app.codecov.io/gh/PhpGt/TypeSafeGetter" target="_blank">
+    <img src="https://badge.status.php.gt/typesafegetter-coverage.svg" alt="Code coverage" />
+</a>
 <a href="https://packagist.org/packages/PhpGt/TypeSafeGetter" target="_blank">
 	<img src="https://badge.status.php.gt/typesafegetter-version.svg" alt="Current version" />
 </a>
-<a href="http://www.php.gt/typesafegetter" target="_blank">
+<a href="https://www.php.gt/typesafegetter" target="_blank">
 	<img src="https://badge.status.php.gt/typesafegetter-docs.svg" alt="PHP.Gt/TypeSafeGetter documentation" />
 </a>
 
@@ -26,13 +29,14 @@ The following methods are defined by this interface:
 + `getFloat(string $name):?float`
 + `getBool(string $name):?bool`
 + `getDateTime(string $name):?DateTimeInterface`
++ `getInstance(string $name, class-string<T> $className):?T`
 
 Common areas you will see this interface used:
 
 + Database rows
 + User input (from the query string or posted form data)
 + Session and cookie storage
-+ [DataObject](https://github.com/PhpGt/DataObject)
++ PHP.Gt's [DataObject](https://www.php.gt/dataobject) repository.
 
 `NullableTypeSafeGetter` trait
 ------------------------------

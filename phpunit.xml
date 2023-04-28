@@ -3,7 +3,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.1/phpunit.xsd"
 	colors="true"
-	cacheDirectory=".phpunit.cache"
+	cacheDirectory="test/phpunit/.phpunit.cache"
+	bootstrap="vendor/autoload.php"
 >
 	<coverage />
 
@@ -19,7 +20,7 @@
 
 	<source>
 		<include>
-			<directory suffix=".php">
+			<directory>
 				src/
 			</directory>
 		</include>
