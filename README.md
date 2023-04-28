@@ -8,7 +8,7 @@ Throughout PHP.Gt repositories, wherever an object represents enclosed data, a c
 <a href="https://github.com/PhpGt/TypeSafeGetter/actions" target="_blank">
 	<img src="https://badge.status.php.gt/typesafegetter-build.svg" alt="Build status" />
 </a>
-<a href="https://app.codacy.com/gh/PhpGt/Curl" target="_blank">
+<a href="https://scrutinizer-ci.com/g/PhpGt/TypeSafeGetter" target="_blank">
 	<img src="https://badge.status.php.gt/typesafegetter-quality.svg" alt="Code quality" />
 </a>
 <a href="https://app.codecov.io/gh/PhpGt/TypeSafeGetter" target="_blank">
@@ -29,7 +29,7 @@ The following methods are defined by this interface:
 + `getFloat(string $name):?float`
 + `getBool(string $name):?bool`
 + `getDateTime(string $name):?DateTimeInterface`
-+ `getObject(string $name, class-string<T> $className):?T`
++ `getInstance(string $name, class-string<T> $className):?T`
 
 Common areas you will see this interface used:
 
