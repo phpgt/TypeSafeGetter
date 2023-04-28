@@ -21,5 +21,9 @@ interface CallbackTypeSafeGetter {
 	 * @param callable():<T> $callback
 	 * @return T
 	 */
-	public function getInstance(string $name, string $className, callable $callback);
+	public function getInstance(
+		string $name,
+		string $className,
+		callable $callback,
+	);
 }
