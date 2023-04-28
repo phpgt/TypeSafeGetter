@@ -40,7 +40,7 @@ trait NullableTypeSafeGetter {
 		);
 	}
 
-	public function getObject(string $name, string $className) {
+	public function getInstance(string $name, string $className) {
 		return $this->getNullableType(
 			$name,
 			$className,

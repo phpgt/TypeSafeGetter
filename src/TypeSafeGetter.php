@@ -17,5 +17,5 @@ interface TypeSafeGetter {
 	 * @param class-string<T> $className
 	 * @return T
 	 */
-	public function getObject(string $name, string $className);
+	public function getInstance(string $name, string $className);
 }

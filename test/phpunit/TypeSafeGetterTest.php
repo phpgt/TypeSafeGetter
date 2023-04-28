@@ -114,12 +114,12 @@ class TypeSafeGetterTest extends TestCase {
 		self::assertSame($dateString, $dateTime->format("Y-m-d"));
 	}
 
-	public function testGetObject():void {
+	public function testGetInstance():void {
 		$example = new ExampleClass("Just an example");
 		$sut = new TestGetter([
 			"example" => $example
 		]);
-		$object = $sut->getObject("example", ExampleClass::class);
+		$object = $sut->getInstance("example", ExampleClass::class);
 		self::assertSame(
 			$example,
 			$object
@@ -134,7 +134,7 @@ class TypeSafeGetterTest extends TestCase {
 		);
 	}
 
-	public function testGetObject_invalidType():void {
+	public function testGetInstance_invalidType():void {
 		$example = new ExampleClass("Just an example");
 		$sut = new TestGetter([
 			"example" => $example
@@ -142,10 +142,10 @@ class TypeSafeGetterTest extends TestCase {
 
 		self::expectException(TypeError::class);
 		self::expectExceptionMessage("Session value must be of type DateTimeInterface, " . ExampleClass::class . " returned");
-		$sut->getObject("example", DateTimeInterface::class);
+		$sut->getInstance("example", DateTimeInterface::class);
 	}
 
-	public function testGetObject_inheritedClass():void {
+	public function testGetInstance_inheritedClass():void {
 		$example = new DateTime("1988-04-05");
 		$sut = new TestGetter([
 			"example" => $example
@@ -153,7 +153,7 @@ class TypeSafeGetterTest extends TestCase {
 
 		self::assertSame(
 			$example,
-			$sut->getObject("example", DateTimeInterface::class),
+			$sut->getInstance("example", DateTimeInterface::class),
 		);
 	}
 }

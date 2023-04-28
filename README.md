@@ -29,7 +29,7 @@ The following methods are defined by this interface:
 + `getFloat(string $name):?float`
 + `getBool(string $name):?bool`
 + `getDateTime(string $name):?DateTimeInterface`
-+ `getObject(string $name, class-string<T> $className):?T`
++ `getInstance(string $name, class-string<T> $className):?T`
 
 Common areas you will see this interface used:
 
