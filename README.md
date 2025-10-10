@@ -42,3 +42,9 @@ Common areas you will see this interface used:
 ------------------------------
 
 A lot of repositories within PHP.Gt that utilise this class were repeating the same getter code, so this trait was introduced to remove the repetition. All getter functions of the interface are implemented, introducing a protected helper function `getNullableType` which removes the repetition of checking null values before casting them. The `getNullableType` function also allows a callback to be passed as the type parameter, allowing more complex nullable types to be constructed.
+
+# Proudly sponsored by
+
+[JetBrains Open Source sponsorship program](https://www.jetbrains.com/community/opensource/)
+
+[![JetBrains logo.](https://resources.jetbrains.com/storage/products/company/brand/logos/jetbrains.svg)](https://www.jetbrains.com/community/opensource/)
