@@ -18,12 +18,12 @@ interface CallbackTypeSafeGetter {
 	 * @template T of object
 	 * @param string $name
 	 * @param class-string<T> $className
-	 * @param callable():<T> $callback
+	 * @param callable(T):mixed $callback
 	 * @return T
 	 */
 	public function getInstance(
 		string $name,
 		string $className,
 		callable $callback,
-	);
+	):object;
 }
