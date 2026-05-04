@@ -1,5 +1,5 @@
 <?php
-namespace Gt\TypeSafeGetter;
+namespace GT\TypeSafeGetter;
 
 use DateTimeInterface;
 
