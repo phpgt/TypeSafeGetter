@@ -1,8 +1,8 @@
 <?php
-namespace Gt\TypeSafeGetter\Test;
+namespace GT\TypeSafeGetter\Test;
 
-use Gt\TypeSafeGetter\TypeSafeGetter;
-use Gt\TypeSafeGetter\NullableTypeSafeGetter;
+use GT\TypeSafeGetter\TypeSafeGetter;
+use GT\TypeSafeGetter\NullableTypeSafeGetter;
 
 class TestGetter implements TypeSafeGetter {
 	use NullableTypeSafeGetter;

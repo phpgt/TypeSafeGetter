@@ -1,5 +1,5 @@
 <?php
-namespace Gt\TypeSafeGetter\Test;
+namespace GT\TypeSafeGetter\Test;
 
 class ExampleClass {
 	public function __construct(

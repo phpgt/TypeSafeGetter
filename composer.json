@@ -50,12 +50,13 @@
 
 	"autoload": {
 		"psr-4": {
+			"GT\\TypeSafeGetter\\": "./src",
 			"Gt\\TypeSafeGetter\\": "./src"
 		}
 	},
 	"autoload-dev": {
 		"psr-4": {
-			"Gt\\TypeSafeGetter\\Test\\": "./test/phpunit"
+			"GT\\TypeSafeGetter\\Test\\": "./test/phpunit"
 		}
 	}
 }

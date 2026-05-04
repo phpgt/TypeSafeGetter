@@ -1,7 +1,7 @@
 An interface for objects that expose type-safe getter methods.
 ==============================================================
 
-Throughout PHP.Gt repositories, wherever an object represents enclosed data, a consistent interface is used to expose the data in a type-safe manner.
+Throughout PHP.GT repositories, wherever an object represents enclosed data, a consistent interface is used to expose the data in a type-safe manner.
 
 ***
 
@@ -18,7 +18,7 @@ Throughout PHP.Gt repositories, wherever an object represents enclosed data, a c
 	<img src="https://badge.status.php.gt/typesafegetter-version.svg" alt="Current version" />
 </a>
 <a href="https://www.php.gt/typesafegetter" target="_blank">
-	<img src="https://badge.status.php.gt/typesafegetter-docs.svg" alt="PHP.Gt/TypeSafeGetter documentation" />
+	<img src="https://badge.status.php.gt/typesafegetter-docs.svg" alt="PHP.GT/TypeSafeGetter documentation" />
 </a>
 
 The following methods are defined by this interface:
@@ -36,12 +36,12 @@ Common areas you will see this interface used:
 + Database rows
 + User input (from the query string or posted form data)
 + Session and cookie storage
-+ PHP.Gt's [DataObject](https://www.php.gt/dataobject) repository.
++ PHP.GT's [DataObject](https://www.php.gt/dataobject) repository.
 
 `NullableTypeSafeGetter` trait
 ------------------------------
 
-A lot of repositories within PHP.Gt that utilise this class were repeating the same getter code, so this trait was introduced to remove the repetition. All getter functions of the interface are implemented, introducing a protected helper function `getNullableType` which removes the repetition of checking null values before casting them. The `getNullableType` function also allows a callback to be passed as the type parameter, allowing more complex nullable types to be constructed.
+A lot of repositories within PHP.GT that utilise this class were repeating the same getter code, so this trait was introduced to remove the repetition. All getter functions of the interface are implemented, introducing a protected helper function `getNullableType` which removes the repetition of checking null values before casting them. The `getNullableType` function also allows a callback to be passed as the type parameter, allowing more complex nullable types to be constructed.
 
 # Proudly sponsored by
 
