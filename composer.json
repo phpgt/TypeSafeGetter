@@ -42,6 +42,10 @@
 		]
 	},
 
+	"platform": {
+		"php": "8.2"
+	},
+
 	"autoload": {
 		"psr-4": {
 			"Gt\\TypeSafeGetter\\": "./src"
