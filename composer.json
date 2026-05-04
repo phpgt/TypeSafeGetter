@@ -42,12 +42,6 @@
 		]
 	},
 
-	"config": {
-		"platform": {
-			"php": "8.2"
-		}
-	},
-
 	"autoload": {
 		"psr-4": {
 			"GT\\TypeSafeGetter\\": "./src",
@@ -57,6 +51,10 @@
 	"autoload-dev": {
 		"psr-4": {
 			"GT\\TypeSafeGetter\\Test\\": "./test/phpunit"
+		}
+	},
+	"config": {
+		"platform": {
 		}
 	}
 }
