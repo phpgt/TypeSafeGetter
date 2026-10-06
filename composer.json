@@ -9,7 +9,7 @@
 	},
 
 	"require-dev": {
-		"phpstan/phpstan": "^1.10",
+		"phpstan/phpstan": "^1.10 || ^2.0",
 		"phpunit/phpunit": "^10.1",
 		"phpmd/phpmd": "^2.13",
 		"squizlabs/php_codesniffer": "^3.7 || ^4.0"
@@ -31,7 +31,7 @@
 
 	"scripts": {
 		"phpunit": "vendor/bin/phpunit --configuration phpunit.xml",
-		"phpstan": "vendor/bin/phpstan analyse --level 6 src --memory-limit 256M",
+		"phpstan": "vendor/bin/phpstan analyse --level 6 src test/phpunit/TestGetter.php --memory-limit 256M",
 		"phpcs": "vendor/bin/phpcs src --standard=phpcs.xml",
 		"phpmd": "vendor/bin/phpmd src/ text phpmd.xml",
 		"test": [
