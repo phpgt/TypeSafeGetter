@@ -31,7 +31,7 @@
 
 	"scripts": {
 		"phpunit": "vendor/bin/phpunit --configuration phpunit.xml",
-		"phpstan": "vendor/bin/phpstan analyse --level 6 src --memory-limit 256M",
+		"phpstan": "vendor/bin/phpstan analyse --level 6 src test/phpunit/TestGetter.php --memory-limit 256M",
 		"phpcs": "vendor/bin/phpcs src --standard=phpcs.xml",
 		"phpmd": "vendor/bin/phpmd src/ text phpmd.xml",
 		"test": [

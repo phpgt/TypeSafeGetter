@@ -122,6 +122,7 @@ jobs:
           path: src/
           level: 6
           memory_limit: 256M
+          args: test/phpunit/TestGetter.php
 
   phpmd:
     runs-on: ubuntu-latest
